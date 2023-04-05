@@ -1,4 +1,4 @@
-﻿    @model List<TeamMember>
+﻿@model ViewModel
 <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -18,25 +18,26 @@
         <div class="container">
 
             <div class="row">
-                @for (int i=0; i<Model.Count; i++)
+                @foreach (var item in Model.TeamMembers)
                 {
+
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member">
-                            <img src="~assets/img/team/@Model[i].BgImg" alt="">
-                            <h4>@Model[i].Title</h4>
-                            <span>@Model[i].Position</span>
-                            <p> 
+                            <img src="~/assets/img/team/@item.BgImg" alt="">
+                            <h4>@item.Title</h4>
+                            <span>@item.Position</span>
+                            <p>
                             </p>
                             <div class="social">
-                                <a href="@Model[i].SocialMedias[i].Url"><i class="@Model[i].SocialMedias[i].Icon"></i></a>
-                                <a href="@Model[i].SocialMedias[i].Url"><i class="@Model[i].SocialMedias[i].Icon"></i></a>
-                                <a href="@Model[i].SocialMedias[i].Url"><i class="@Model[i].SocialMedias[i].Icon"></i></a>
-                                <a href="@Model[i].SocialMedias[i].Url"><i class="@Model[i].SocialMedias[i].Icon"></i></a>
+                                @foreach (var scm in Model.SocialMedias)
+                                {
+                                    <a href="@scm.Url"><i class="@scm.Icon"></i></a>
+                                }
                             </div>
                         </div>
                     </div>
-
                 }
+
 
             </div>
 
