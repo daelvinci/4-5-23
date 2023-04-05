@@ -1,0 +1,46 @@
+﻿    @model List<TeamMember>
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li>Team</li>
+            </ol>
+            <h2>Team</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+        <div class="container">
+
+            <div class="row">
+                @for (int i=0; i<Model.Count; i++)
+                {
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <img src="~assets/img/team/@Model[i].BgImg" alt="">
+                            <h4>@Model[i].Title</h4>
+                            <span>@Model[i].Position</span>
+                            <p> 
+                            </p>
+                            <div class="social">
+                                <a href="@Model[i].SocialMedias[i].Url"><i class="@Model[i].SocialMedias[i].Icon"></i></a>
+                                <a href="@Model[i].SocialMedias[i].Url"><i class="@Model[i].SocialMedias[i].Icon"></i></a>
+                                <a href="@Model[i].SocialMedias[i].Url"><i class="@Model[i].SocialMedias[i].Icon"></i></a>
+                                <a href="@Model[i].SocialMedias[i].Url"><i class="@Model[i].SocialMedias[i].Icon"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+
+        </div>
+    </section><!-- End Team Section -->
+
+</main><!-- End #main -->

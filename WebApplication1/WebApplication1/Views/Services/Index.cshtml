@@ -1,0 +1,22 @@
+﻿@model List<Service>
+<!-- ======= Services Section ======= -->
+<main>
+    <section id="services" class="services">
+        <div class="container">
+
+            <div class="row">
+                @foreach (var srv in Model)
+                {
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="icon-box">
+                            <div class="icon"><i class="@srv.Icon"></i></div>
+                            <h4><a href="">@srv.Title</a></h4>
+                            <p>@srv.Desc</p>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </section><!-- End Services Section -->
+</main>
